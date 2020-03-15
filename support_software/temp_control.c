@@ -101,7 +101,7 @@ int main(void)
 			{
 				while (ifAddrStruct != NULL)
 				{
-					if (ifAddrStruct->ifa_addr->sa_family == AF_INET)
+					if (ifAddrStruct->ifa_addr != NULL && ifAddrStruct->ifa_addr->sa_family == AF_INET)
 					{ // check it is IP4 is a valid IP4 Address
 						tmpAddrPtr = &((struct sockaddr_in *)ifAddrStruct->ifa_addr)->sin_addr;
 						char addressBuffer[INET_ADDRSTRLEN];
